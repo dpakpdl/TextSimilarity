@@ -47,12 +47,24 @@ def similarity(documents: List[str], query: str):
     return max_similarities, documents[list(similarities).index(max_similarities)]
 
 
-print(
-    similarity(
-        [
-            "Venus is the second planet from the sun, and close to the earth, which is why it’s often referred to as our sister planet. It’s similar size to the Earth, about 7300 miles (12,000 kilometers). It’s nicknamed ‘’the morning star,” and thought to be the most inhabitable planet. Surface temperatures of Venus approach 900 degrees Fahrenheit, hot enough to melt the surface of the earth. Venus has a characteristic thick atmosphere, composed mainly of sulphuric acid and carbon dioxide.",
-            "Mercury is the smallest planet in the solar system, approximately 3000 miles (4850 km) in diameter, hardly larger than the moon. Despite being the smallest, it’s extremely dense. In fact, it’s the second densest planet after Earth. It’s also the closest planet to the sun, making it dangerous to explore. Mercury is 48 million miles from the earth."
-        ],
-        "Zipping around the sun in only 88 days, Mercury is the closest planet to the sun, and it's also the smallest, only a little bit larger than Earth's moon. Because its so close to the sun (about two-fifths the distance between Earth and the sun), Mercury experiences dramatic changes in its day and night temperatures: Day temperatures can reach a scorching 840  F (450 C), which is hot enough to melt lead. Meanwhile on the night side, temperatures drop to minus 290 F (minus 180 C). "
-    )
-)
+if __name__ == '__main__':
+    documents = [
+        "Venus is the second planet from the sun, and close to the earth, "
+        "which is why it’s often referred to as our sister planet. It’s similar size to the Earth, "
+        "about 7300 miles (12,000 kilometers). It’s nicknamed ‘’the morning star,” and thought to be the "
+        "most inhabitable planet. Surface temperatures of Venus approach 900 degrees Fahrenheit, hot enough "
+        "to melt the surface of the earth. Venus has a characteristic thick atmosphere, composed mainly of "
+        "sulphuric acid and carbon dioxide.",
+        "Mercury is the smallest planet in the solar system, approximately 3000 miles (4850 km) in diameter, "
+        "hardly larger than the moon. Despite being the smallest, it’s extremely dense. "
+        "In fact, it’s the second densest planet after Earth. It’s also the closest planet to the sun, "
+        "making it dangerous to explore. Mercury is 48 million miles from the earth."
+    ]
+    text_to_search = "Zipping around the sun in only 88 days, Mercury is the closest planet" \
+                     " to the sun, and it's also the smallest, only a little bit larger than Earth's moon." \
+                     " Because its so close to the sun (about two-fifths the distance between Earth and the sun), " \
+                     "Mercury experiences dramatic changes in its day and night temperatures: Day " \
+                     "temperatures can reach a scorching 840  F (450 C), which is hot enough to melt lead. " \
+                     "Meanwhile on the night side, temperatures drop to minus 290 F (minus 180 C). "
+
+    print(similarity(documents, text_to_search))
